@@ -87,7 +87,7 @@ namespace DoroboShop.Controllers
 
                 _context.dbFilterNameGroups.Add(new FilterNameGroups
                 {
-                      FilterNameId = model.Id,
+                      FilterNameId = model.NameFilterId,
                       FilterValueId= categoryValue.Id,
                       CategoryId = model.CategoryId
                 });
@@ -98,7 +98,7 @@ namespace DoroboShop.Controllers
             else { return View(model); }
 
         }
-        [HttpPost]
+        
         public ActionResult Delete(int id)
         {
 
