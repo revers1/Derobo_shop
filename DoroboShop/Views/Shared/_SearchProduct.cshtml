@@ -1,0 +1,27 @@
+﻿<li class="navbar-menu-item">
+    @using (Html.BeginForm("(Function)", "(Constructor)", FormMethod.Post,
+                            new { enctype = "multipart/form-data", @class = "form-inline" }))
+    {
+        <input type="text" name="txtProductName" class="form-control" placeholder="Search: ">
+        <button type="submit" id="btnSearchProduct" name="btnSearchProduct" class="btn btn-search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+
+    }
+</li>
+
+
+<li>
+    <a class="navbar-menu-item">
+        <button class="btn btn-user" type="submit" id="btnUsersProfile" name="btnUsersProfile">
+            <i class="fa fa-user" aria-hidden="true"></i>
+        </button>
+    </a>
+</li>
+<li>
+    <a class="navbar-menu-item">
+        <button class="btn btn-basket" type="submit" id="btnBasketOfProduct" name="btnBasketOfProduct">
+            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+        </button>
+    </a>
+</li>

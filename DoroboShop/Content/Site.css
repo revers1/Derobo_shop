@@ -1,0 +1,84 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-color: black!important;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar {
+    background-color: black !important;
+}
+
+.navbar-nav li a {
+    color: #5d16a2 !important;
+}
+
+.btn-search {
+    background-color: black !important;
+    padding: 10px !important;
+}
+
+.form-control {
+    width: 200px !important;
+    color: #5d16a2 !important;
+}
+
+.fa {
+    color: #5d16a2 !important;
+}
+
+    .fa:hover {
+        color: #8b00ff !important;
+    }
+
+.btn-user {
+    padding: 10px !important;
+    background-color: black !important;
+}
+
+.btn-basket {
+    padding: 10px !important;
+    background-color: black !important;
+}
+
+.navbar-menu-item {
+    padding: 5px !important;
+}
+
+/*BRAND*/
+
+.brand-block {
+    padding: 15px;
+}
+
+.brand-name {
+    font-weight: 600;
+    color: white;
+    font-size: 18px;
+}
+
+.brand-name-clothes {
+    background-color: #5d16a2;
+    padding: 5px;
+    border-radius: 10px;
+    color: black;
+}
