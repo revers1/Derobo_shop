@@ -19,17 +19,22 @@ namespace DoroboShop.Controllers
             _context = new ApplicationDbContext();
         }
 
+      
 
-    
         public ActionResult GetProductsByCategory(int id)
         {
+
+            //string image;
+            //    //= Server.MapPath(Constants.ProductImagePath) +
+            //    //filename;
+
             List<ProductViewModel> list = _context.dbProduct.Where(t => t.CategoryId == id).Select(t => new ProductViewModel
             {
                 Brand = t.Brand,
                 CategoryId = t.CategoryId,
                 Name = t.Name,
                 Price = t.Price,
-                Photo = t.Photo,
+                Photo = t.Photo,              
                 Id = t.Id
             }).ToList();
 
@@ -39,14 +44,9 @@ namespace DoroboShop.Controllers
         public ActionResult Delete(int id)
         {
 
-            //_context.dbCategories.Remove(_context.dbCategories.FirstOrDefault(t => t.Id == id));
-            //_context.SaveChanges();
-            Category cat = _context.dbCategories.Find(id);
-            if (cat != null)
-            {
-                _context.dbCategories.Remove(cat);
-                _context.SaveChanges();
-            }
+            _context.dbCategories.Remove(_context.dbCategories.FirstOrDefault(t => t.Id == id));
+            _context.SaveChanges();
+
 
 
             return RedirectToAction("Index", "Category");

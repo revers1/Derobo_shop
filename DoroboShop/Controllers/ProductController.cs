@@ -31,6 +31,7 @@ namespace DoroboShop.Controllers
             foreach (var item in Products)
             {
                 var filename = Url.Content(Constants.ProductImagePath) + item.Photo;
+                filename.Replace(@"\\", @"\");
                 list.Add(new ProductViewModel
                 {
                     Id = item.Id,
@@ -159,6 +160,7 @@ namespace DoroboShop.Controllers
             string filename = Guid.NewGuid().ToString() + ".jpg";
             string image = Server.MapPath(Constants.ProductImagePath) +
                 filename;
+            
             using (Bitmap bmp = new Bitmap(someFile.InputStream))
             {
                 var saveImage = ImageWorker.CreateImage(bmp, 350, 350);
@@ -180,7 +182,9 @@ namespace DoroboShop.Controllers
                         Season = model.Season,
                         Description = model.Description,
                         DataCreate = DateTime.Now,
-                        CategoryId = model.CategoryId
+                        CategoryId = model.CategoryId,
+                       
+                        
                     };
                     _context.dbProduct.Add(pdImage);
                     _context.SaveChanges();
