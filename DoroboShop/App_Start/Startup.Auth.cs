@@ -54,15 +54,13 @@ namespace DoroboShop
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+              appId: "512068383069746",
+             appSecret: "735b4f700a33090c67a3083f8614376c");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(
+            clientId: "103561150740-i0odk0s8907n2r7sgo85h7ln5gmjht2t.apps.googleusercontent.com",
+            clientSecret: "cLfUfjC5U4JHrvDk1dyM3kkS");
         }
     }
 }
