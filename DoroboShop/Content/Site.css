@@ -79,8 +79,14 @@ textarea {
 .brand-name-clothes {
     background-color: #5d16a2;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
     color: black;
+}
+
+@media only screen and (max-width: 798px) {
+    .brand-name {
+        font-size: 14px;
+    }
 }
 
 /*CATEGORIES MENU*/
@@ -115,13 +121,33 @@ textarea {
     font-weight: 500;
 }
 
+@media only screen and (max-width: 798px) {
+    .menu-of-categories-item {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .menu-of-categories-link {
+        padding: 3px;
+    }
+}
+
 /*PRODUCT BLOCK*/
+
+@media only screen and (max-width: 798px) {
+    .product-image {
+        height: 250px;
+        width: 200px;
+    }
+}
+
 .block-product {
     float: left;
     margin-right: 3%;
     margin-top: 3%;
     box-shadow: 0 0 5px 2px #8b00ff;
     padding: 2%;
+    border-radius: 7px;
 }
 
     .block-product:hover {
@@ -152,4 +178,45 @@ textarea {
     font-size: 20px;
     width: auto;
     font-weight: 600 !important;
+}
+
+/*FOOTER*/
+
+.footer-menues {
+    list-style: none;
+}
+
+.footer-social-network {
+    float: left;
+    width: 25%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.footer-brand-name {
+    font-weight: 600;
+    color: white;
+    font-size: 16px;
+}
+
+.footer-brand-name-clothes {
+    background-color: #5d16a2;
+    padding: 5px;
+    border-radius: 5px;
+    color: black;
+}
+
+.span-copyright {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: underline;
+    font-family: Century Gothic;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 798px) {
+    .span-copyright {
+        visibility: hidden;
+    }
 }
