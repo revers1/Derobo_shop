@@ -83,39 +83,73 @@ textarea {
     color: black;
 }
 
-/*ADMIN PANEL MENU*/
-
-.admin-navbar-item:hover {
-    background-color: #5d16a2 !important;
-    padding: 3px !important;
-    color: white !important;
-    font-weight: 600 !important;
-}
-
-admin-navbar:hover {
-    padding: 15px !important;
-}
-
 /*CATEGORIES MENU*/
+
 .menu-of-categories {
+    list-style-type: none;
+    margin-bottom: 2.1%;
+    padding: 2%;
 }
 
 .menu-of-categories-item {
+    padding: 8px;
+    background-color: #8b00ff;
+    float: left;
+    font-family: "Century Gothic";
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.menu-of-categories-link {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    background-color: #8b00ff;
+}
+
+.menu-of-categories-link:hover {
+    color: #8b00ff;
+    background-color: white;
+    border-radius: 5px;
+    text-decoration: underline;
+    font-weight: 500;
 }
 
 /*PRODUCT BLOCK*/
 .block-product {
     float: left;
+    margin-right: 3%;
+    margin-top: 3%;
+    box-shadow: 0 0 5px 2px #8b00ff;
+    padding: 2%;
 }
 
     .block-product:hover {
+        box-shadow: 0 0 5px 4px #8b00ff;
     }
 
 .product-image {
+    height: 350px;
+    width: 300px;
 }
 
 .data-of-product {
+    background-color: #8b00ff;
+    color: white;
+    padding: 10px;
+    font-family: "Century Gothic";
+    border-radius: 10px;
+    font-size: 16px;
 }
 
-.data-of-product {
+.price-of-product {
+    margin-top: 3%;
+    background-color: #FFA000;
+    color: white;
+    padding: 10px;
+    font-family: "Century Gothic";
+    border-radius: 10px;
+    font-size: 20px;
+    width: auto;
+    font-weight: 600 !important;
 }
