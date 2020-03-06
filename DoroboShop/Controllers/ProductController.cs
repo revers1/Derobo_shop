@@ -53,9 +53,6 @@ namespace DoroboShop.Controllers
             return View(list);
         }
 
-
-
-
         [HttpGet]
         public ActionResult Edit(int id)
         {
@@ -80,7 +77,6 @@ namespace DoroboShop.Controllers
             };
 
             return View(model);
-
         }
 
         [HttpPost]
@@ -106,7 +102,6 @@ namespace DoroboShop.Controllers
                 foundProduct.CategoryId = model.CategoryId;
                 _context.SaveChanges();
 
-
                 return RedirectToAction("Index", "Product");
             }
             else { return View(model); }
@@ -117,13 +112,10 @@ namespace DoroboShop.Controllers
 
         public ActionResult Delete(int id)
         {
-
             _context.dbProduct.Remove(_context.dbProduct.FirstOrDefault(t => t.Id == id));
             _context.SaveChanges();
 
-
             return RedirectToAction("Index", "Product");
-
         }
 
 
