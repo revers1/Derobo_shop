@@ -20,17 +20,20 @@ namespace DoroboShop.Controllers
         {
             GroupViewModel model = new GroupViewModel();
 
-            List<CategoryViewModelcs> listCategories = _context.dbCategories.Where(t => t.ParentId == null).Select(t => new CategoryViewModelcs { 
+            List<CategoryViewModelcs> listCategories = _context.dbCategories.Where(t => t.ParentId == null).Select(t => new CategoryViewModelcs
+            {
                 Id = t.Id,
                 Name = t.Name,
                 ParentId = t.ParentId
             }).ToList();
 
-            List<ProductViewModel> listProducts = _context.dbProduct.Select(t=>new ProductViewModel
+            string linkString = Server.MapPath(Constants.ProductImagePath);
+
+            List<ProductViewModel> listProducts = _context.dbProduct.Select(t => new ProductViewModel
             {
                 Name = t.Name,
-                Price= t.Price,
-                Photo =t.Photo
+                Price = t.Price,
+                Photo = linkString + t.Photo
             }).ToList();
 
             model.Categories = listCategories;
