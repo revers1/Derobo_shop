@@ -34,6 +34,8 @@ namespace DoroboShop.Controllers
                 list.Add(new ProductViewModel
                 {
                     Id = item.Id,
+
+
                     Name = item.Name,
                     Photo = item.Photo,
                     Price = item.Price,
@@ -115,23 +117,37 @@ namespace DoroboShop.Controllers
 
 
 
-        public ActionResult Delete(int id)
-        {
-
-            _context.dbProduct.Remove(_context.dbProduct.FirstOrDefault(t => t.Id == id));
-            _context.SaveChanges();
-
-
-            return RedirectToAction("Index", "Product");
-
-        }
+        
 
 
 
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            List<Category> list = _context.dbCategories.ToList();
+          
+
+            List<SelectListItem> selectedesCategori = new List<SelectListItem>();
+
+          
+        
+            foreach (var item in list)
+            {
+
+                selectedesCategori.Add(new SelectListItem()
+                {
+                    Value = item.Id.ToString(),
+                    Text = item.Name
+
+                });
+            }
+
+            CreateProductViewModel model = new CreateProductViewModel();
+            model.Categories = selectedesCategori;
+          
+
+            return View(model);
+
         }
 
         [HttpPost]
@@ -176,5 +192,27 @@ namespace DoroboShop.Controllers
         }
 
 
+        public ActionResult SearchProduct(string searchString)
+        {
+            List<Product> list = _context.dbProduct.ToList();
+    
+               var list2 = list.Where(s => s.Name.Contains(searchString));
+          
+
+            return View(list2);
+        }
+
+
+        public ActionResult Delete(int id)
+        {
+
+            _context.dbProduct.Remove(_context.dbProduct.FirstOrDefault(t => t.Id == id));
+            _context.SaveChanges();
+
+
+
+            return RedirectToAction("Index", "Product");
+
+        }
     }
 }

@@ -36,7 +36,22 @@ namespace DoroboShop.Controllers
             return View(list);
         }
 
+        public ActionResult Delete(int id)
+        {
 
+            //_context.dbCategories.Remove(_context.dbCategories.FirstOrDefault(t => t.Id == id));
+            //_context.SaveChanges();
+            Category cat = _context.dbCategories.Find(id);
+            if (cat != null)
+            {
+                _context.dbCategories.Remove(cat);
+                _context.SaveChanges();
+            }
+
+
+            return RedirectToAction("Index", "Category");
+
+        }
         public ActionResult Index()
         {
             List<CategoryViewModelcs> Categories = _context.dbCategories.Select(e => new CategoryViewModelcs
@@ -63,6 +78,12 @@ namespace DoroboShop.Controllers
              
                 });
             }
+            selected.Add(new SelectListItem()
+            {
+                Value = null,
+                Text = ""
+
+            });
             CreateCategoryViewModel cat = new CreateCategoryViewModel();
             cat.Categories = selected;
 
@@ -71,7 +92,7 @@ namespace DoroboShop.Controllers
 
 
         [HttpPost]
-        public ActionResult Create(CategoryViewModelcs model)
+        public ActionResult Create(CreateCategoryViewModel model)
         {
 
             if (ModelState.IsValid)
@@ -89,16 +110,7 @@ namespace DoroboShop.Controllers
 
         }
         
-        public ActionResult Delete(int id)
-        {
-
-            _context.dbCategories.Remove(_context.dbCategories.FirstOrDefault(t => t.Id == id));
-            _context.SaveChanges();
-
-
-            return RedirectToAction("Index", "Category");
-
-        }
+       
 
 
 
