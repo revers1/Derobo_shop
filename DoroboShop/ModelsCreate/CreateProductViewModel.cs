@@ -44,6 +44,8 @@ namespace DoroboShop.ModelsCreate
 
         public HttpPostedFileBase SomeFile { get; set; }
 
+        public List<SelectListItem> Categories { get; set; }
+
         [Required]
         public int CategoryId { get; set; }
     }
