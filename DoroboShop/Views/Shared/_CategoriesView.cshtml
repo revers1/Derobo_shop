@@ -1,10 +1,12 @@
 ﻿@model IEnumerable<DoroboShop.Models.CategoryViewModelcs>
 
-<ul class="menu-of-categories">
-    <li class="menu-of-categories-item">
-        @foreach (var category in Model)
-        {
-            <a href="@Url.Action("GetProductsByCategory","CategoryController",new { id = category.Id})" class="menu-of-categories-link">@category.Name</a>
-        }
-    </li>
-</ul>
+<div>
+    <ul class="menu-of-categories">
+        <li class="menu-of-categories-item">
+            @foreach (var category in Model)
+            {
+                <a href="@Url.Action("GetProductsByCategory","CategoryController",new { id = category.Id})" class="menu-of-categories-link">@category.Name</a>
+            }
+        </li>
+    </ul>
+</div>

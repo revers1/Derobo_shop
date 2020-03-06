@@ -306,6 +306,7 @@
     <Content Include="Views\Shared\_CategoriesView.cshtml" />
     <Content Include="Views\Category\GetProductsByCategory.cshtml" />
     <Content Include="Views\Shared\_ProductsView.cshtml" />
+    <Content Include="Views\Shared\_CurrentProductView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
