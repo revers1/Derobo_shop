@@ -6,16 +6,19 @@
         @Html.AntiForgeryToken()
 
         <ul class="nav navbar-nav navbar-right">
+            <li class="admin-navbar"><a href="@Url.Action("Create", "Category")" class="admin-navbar-item">Add category</a></li>
+            <li class="admin-navbar"><a href="@Url.Action("Index", "Category")" class="admin-navbar-item">View category</a></li>
 
-            <li class="navbar-menu-item">
-                >
-                @Html.Partial("_SearchProduct");
-            </li>
-            <li>
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-            </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            <li class="admin-navbar"><a href="@Url.Action("Create", "Product")" class="admin-navbar-item">Add product</a></li>
+            <li class="admin-navbar"><a href="@Url.Action("Index", "Product")" class="admin-navbar-item">View product</a></li>
 
+            <li class="admin-navbar"><a href="@Url.Action("Create", "FilterValue")" class="admin-navbar-item">Add filter value</a></li>
+            <li class="admin-navbar"><a href="@Url.Action("Index", "FilterValue")" class="admin-navbar-item">Add filter value</a></li>
+
+            <li class="admin-navbar"><a href="@Url.Action("Create", "FilterName")" class="admin-navbar-item">Add filter name</a></li>
+            <li class="admin-navbar"><a href="@Url.Action("Index", "FilterName")" class="admin-navbar-item">Add filter name</a></li>
+
+            <li><a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
         </ul>
     }
 }
@@ -23,20 +26,33 @@ else
 {
     <ul class="nav navbar-nav navbar-right">
         <li>
-            @Html.Partial("_SearchProduct");
-
+            @Html.Partial("_SearchProduct")
         </li>
+
+        <li>
+            <a class="navbar-menu-item">
+                <button class="btn btn-user" type="submit" id="btnUsersProfile" name="btnUsersProfile">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </button>
+            </a>
+        </li>
+        <li>
+            <a class="navbar-menu-item">
+                <button class="btn btn-basket" type="submit" id="btnBasketOfProduct" name="btnBasketOfProduct">
+                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                </button>
+            </a>
+        </li>
+
         <li>
             <a href="@Url.Action("Register", "Account" )">
                 <i class="fa fa-pencil" aria-hidden="true"><span style="margin-left: 10px;"></span></i>
-
             </a>
         </li>
 
         <li>
             <a href="@Url.Action("Login", "Account" )">
                 <i class="fa fa-sign-in" aria-hidden="true"><span style="margin-left: 10px;"></span></i>
-
             </a>
         </li>
 

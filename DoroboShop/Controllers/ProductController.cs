@@ -17,7 +17,7 @@ namespace DoroboShop.Controllers
         // GET: Product
         private ApplicationDbContext _context;
 
-        public ProductController( )
+        public ProductController()
         {
             _context = new ApplicationDbContext();
         }
@@ -31,7 +31,8 @@ namespace DoroboShop.Controllers
             foreach (var item in Products)
             {
                 var filename = Url.Content(Constants.ProductImagePath) + item.Photo;
-                list.Add(new ProductViewModel {
+                list.Add(new ProductViewModel
+                {
                     Id = item.Id,
                     Name = item.Name,
                     Photo = item.Photo,
@@ -53,7 +54,7 @@ namespace DoroboShop.Controllers
         }
 
 
-        
+
 
         [HttpGet]
         public ActionResult Edit(int id)
@@ -64,7 +65,7 @@ namespace DoroboShop.Controllers
             {
                 Id = temp.Id,
                 Name = temp.Name,
-                Photo=temp.Photo,
+                Photo = temp.Photo,
                 Price = temp.Price,
                 Size = temp.Size,
                 Sale = temp.Sale,
@@ -88,21 +89,21 @@ namespace DoroboShop.Controllers
 
             if (ModelState.IsValid)
             {
-               var foundProduct = _context.dbProduct.First(t => t.Id == model.Id);
-                    foundProduct.Id = model.Id;
-                    foundProduct.Name = model.Name;
-                    foundProduct.Photo = model.Photo;
-                    foundProduct.Price = model.Price;
-                    foundProduct.Size = model.Size;
-                    foundProduct.Sale = model.Sale;
-                    foundProduct.Quantity = model.Quantity;
-                    foundProduct.Color = model.Color;
-                    foundProduct.Brand = model.Brand;
-                    foundProduct.Country = model.Country;
-                    foundProduct.Season = model.Season;
-                    foundProduct.Description = model.Description;
-                    foundProduct.DataCreate = model.DataCreate;
-                    foundProduct.CategoryId = model.CategoryId;
+                var foundProduct = _context.dbProduct.First(t => t.Id == model.Id);
+                foundProduct.Id = model.Id;
+                foundProduct.Name = model.Name;
+                foundProduct.Photo = model.Photo;
+                foundProduct.Price = model.Price;
+                foundProduct.Size = model.Size;
+                foundProduct.Sale = model.Sale;
+                foundProduct.Quantity = model.Quantity;
+                foundProduct.Color = model.Color;
+                foundProduct.Brand = model.Brand;
+                foundProduct.Country = model.Country;
+                foundProduct.Season = model.Season;
+                foundProduct.Description = model.Description;
+                foundProduct.DataCreate = model.DataCreate;
+                foundProduct.CategoryId = model.CategoryId;
                 _context.SaveChanges();
 
 
@@ -113,7 +114,7 @@ namespace DoroboShop.Controllers
         }
 
 
-       
+
         public ActionResult Delete(int id)
         {
 
