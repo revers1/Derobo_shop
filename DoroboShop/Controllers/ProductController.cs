@@ -218,5 +218,38 @@ namespace DoroboShop.Controllers
             return RedirectToAction("Index", "Product");
 
         }
+
+
+        public ActionResult SearchProductById(int id)
+        {
+           
+
+            List<ProductViewModel> list = _context.dbProduct.Where(t => t.Id == id).Select(t => new ProductViewModel
+            {
+                Id = t.Id,
+
+
+                Name = t.Name,
+                Photo = t.Photo,
+                Price = t.Price,
+                Size = t.Size,
+                Sale = t.Sale,
+                Quantity = t.Quantity,
+                Color = t.Color,
+                Brand = t.Brand,
+                Country = t.Country,
+                Season = t.Season,
+                Description = t.Description,
+                DataCreate = t.DataCreate,
+                CategoryId = t.CategoryId,
+                FilePath=t.FilePath
+
+
+            }).ToList();
+
+            return View(list);
+          
+        }
+
     }
 }
