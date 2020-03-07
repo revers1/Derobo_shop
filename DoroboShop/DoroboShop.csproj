@@ -242,6 +242,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\140ab63a-5103-4b0f-becb-645873f8b10a.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -306,14 +307,13 @@
     <Content Include="Views\Shared\_CategoriesView.cshtml" />
     <Content Include="Views\Category\GetProductsByCategory.cshtml" />
     <Content Include="Views\Shared\_ProductsView.cshtml" />
-    <Content Include="Views\Shared\_CurrentProductView.cshtml" />
+    <Content Include="Views\Product\SearchProductById.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Areas\Admin\Views\Shared\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

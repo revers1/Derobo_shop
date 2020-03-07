@@ -1,0 +1,113 @@
+﻿@model DoroboShop.Models.ProductViewModel
+@{
+    ViewBag.Title = "SearchModelById";
+}
+
+<div class="container">
+    <div class="row">
+
+        <ul style="list-style-type: none; margin-top: 2%;">
+
+            <li style="float: left;">
+                <img src="@Model.Photo" class="image-of-product-view" />
+            </li>
+
+            <li style="float: left;">
+
+                <div>
+
+                    <ul style="list-style-type: none;">
+
+                        <li style="margin-bottom: 4%;">
+                            <span class="name-n-brand">
+                                @Model.ProductName
+                                <span class="brand-of-product">
+                                    @Model.Brand
+                                </span>
+                            </span>
+                        </li>
+
+                        <li>
+
+                            <div class="description-block">
+
+                                <ul style="list-style-type: none;">
+
+                                    <li class="nav-item-descr">
+                                        <span class="description-of-product">
+                                            Brand:
+                                            <span class="data-of-descr-product">
+                                                @Model.Brand
+                                            </span>
+                                        </span>
+                                    </li>
+
+                                    <li class="nav-item-descr">
+                                        <span class="description-of-product">
+                                            Color:
+                                            <span class="data-of-descr-product">
+                                                @Model.Color
+                                            </span>
+                                        </span>
+                                    </li>
+
+                                    <li class="nav-item-descr">
+                                        <span class="description-of-product">
+                                            Size:
+                                            <span class="data-of-descr-product">
+                                                @Model.Size
+                                            </span>
+                                        </span>
+                                    </li>
+
+                                    <li class="nav-item-descr">
+                                        <span class="description-of-product">
+                                            Season:
+                                            <span class="data-of-descr-product">
+                                                @Model.Season
+                                            </span>
+                                        </span>
+                                    </li>
+
+                                    <li class="nav-item-descr">
+                                        <span class="description-of-product">
+                                            Country of Origin:
+                                            <span class="data-of-descr-product">
+                                                @Model.Country
+                                            </span>
+                                        </span>
+                                    </li>
+
+                                    <li class="nav-item-descr">
+                                        <span class="description-of-product">
+                                            Comment:
+                                            <span class="data-of-descr-product">
+                                                @Model.Description
+                                            </span>
+                                        </span>
+                                    </li>
+
+                                </ul>
+
+                            </div>
+
+                        </li>
+
+                        <li class="nav-item-descr">
+                            <span class="description-of-product">
+                                <span class="data-of-descr-product price-of-product-view">
+                                    @Model.Price $
+                                </span>
+                            </span>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </li>
+
+        </ul>
+
+    </div>
+</div>

@@ -27,13 +27,24 @@ namespace DoroboShop.Controllers
                 ParentId = t.ParentId
             }).ToList();
 
-            string linkString = Server.MapPath(Constants.ProductImagePath);
+            string linkString = Url.Content(Constants.ProductImagePath);
 
             List<ProductViewModel> listProducts = _context.dbProduct.Select(t => new ProductViewModel
             {
-                Name = t.Name,
+                Id = t.Id,
+                ProductName = t.Name,
+                Photo = linkString + t.Photo,
                 Price = t.Price,
-                Photo = linkString + t.Photo
+                Size = t.Size,
+                Sale = t.Sale,
+                Quantity = t.Quantity,
+                Color = t.Color,
+                Brand = t.Brand,
+                Country = t.Country,
+                Season = t.Season,
+                Description = t.Description,
+                DataCreate = t.DataCreate,
+                CategoryId = t.CategoryId
             }).ToList();
 
             model.Categories = listCategories;

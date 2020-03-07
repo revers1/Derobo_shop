@@ -32,7 +32,7 @@ namespace DoroboShop.Controllers
             {
                 Brand = t.Brand,
                 CategoryId = t.CategoryId,
-                Name = t.Name,
+                ProductName = t.Name,
                 Price = t.Price,
                 Photo = t.Photo,              
                 Id = t.Id

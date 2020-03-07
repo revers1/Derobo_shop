@@ -2,10 +2,18 @@
     @using (Html.BeginForm("(Function)", "(Constructor)", FormMethod.Post,
                             new { enctype = "multipart/form-data", @class = "form-inline" }))
     {
-        <input type="text" name="txtProductName" class="form-control" placeholder="Search: ">
-        <button type="submit" id="btnSearchProduct" name="btnSearchProduct" class="btn btn-search">
-            <i class="fa fa-search" aria-hidden="true"></i>
-        </button>
+        <ul style="list-style-type: none;">
 
+            <li style="float: left; padding: 4px 0px 4px 4px;">
+                <input type="text" name="txtProductName" class="form-control" placeholder="Search: ">
+            </li>
+
+            <li style="float: left;">
+                <button type="submit" id="btnSearchProduct" name="btnSearchProduct" class="btn btn-search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </li>
+
+        </ul>
     }
 </li>
