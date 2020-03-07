@@ -116,12 +116,6 @@ namespace DoroboShop.Controllers
 
         }
 
-
-
-        
-
-
-
         [HttpGet]
         public ActionResult Create()
         {
