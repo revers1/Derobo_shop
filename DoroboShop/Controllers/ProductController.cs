@@ -57,6 +57,7 @@ namespace DoroboShop.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id)
         {
 
@@ -83,6 +84,7 @@ namespace DoroboShop.Controllers
 
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public ActionResult Edit(EditProductViewModel model)
         {
@@ -113,6 +115,7 @@ namespace DoroboShop.Controllers
 
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult Create()
         {
@@ -143,6 +146,7 @@ namespace DoroboShop.Controllers
         }
 
         [HttpPost]
+        [Authorize (Roles = "Admin")]
         public ActionResult Create(CreateProductViewModel model, HttpPostedFileBase someFile)
         {
             // do something with someFile
@@ -186,16 +190,7 @@ namespace DoroboShop.Controllers
             return View(model);
         }
 
-        public ActionResult SearchProduct(string searchString)
-        {
-            List<Product> list = _context.dbProduct.ToList();
-
-            var list2 = list.Where(s => s.Name.Contains(searchString));
-
-
-            return View(list2);
-        }
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id)
         {
 
