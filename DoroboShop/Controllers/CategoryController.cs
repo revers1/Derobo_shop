@@ -43,9 +43,18 @@ namespace DoroboShop.Controllers
 
         public ActionResult Delete(int id)
         {
-
-            _context.dbCategories.Remove(_context.dbCategories.FirstOrDefault(t => t.Id == id));
+           
+            var category = _context.dbCategories.Where(e => e.ParentId == id).ToList();
+            if (category == null)
+            {
+                _context.dbCategories.Remove(_context.dbCategories.FirstOrDefault(t => t.Id == id));
+            }
+            else {
+               
+            }
             _context.SaveChanges();
+
+
 
 
 
@@ -57,7 +66,8 @@ namespace DoroboShop.Controllers
             List<CategoryViewModelcs> Categories = _context.dbCategories.Select(e => new CategoryViewModelcs
             {
                 Name = e.Name,
-                ParentId=e.ParentId
+                ParentId=e.ParentId,
+                Id = e.Id
 
             }).ToList();
 
@@ -69,6 +79,11 @@ namespace DoroboShop.Controllers
         {
             List<Category> list = _context.dbCategories.ToList();
             List<SelectListItem> selected = new List<SelectListItem>();
+            selected.Add(new SelectListItem()
+            {
+                Value = "Base",
+                Text = "Base category"
+            });
             foreach (var item in list)
             {
                 selected.Add(new SelectListItem()
@@ -78,11 +93,7 @@ namespace DoroboShop.Controllers
              
                 });
             }
-            selected.Add(new SelectListItem()
-            {
-                Value = "Base",
-                Text = "Base category"
-            });
+           
             CreateCategoryViewModel cat = new CreateCategoryViewModel();
             cat.Categories = selected;
 
@@ -96,11 +107,21 @@ namespace DoroboShop.Controllers
 
             if (ModelState.IsValid)
             {
-                _context.dbCategories.Add(new Category
+                if (model.ParentId == "Base")
                 {
-                    Name = model.Name,
-                    ParentId = int.Parse(model.ParentId)
-                });
+                    _context.dbCategories.Add(new Category
+                    {
+                        Name = model.Name,
+                    });
+                }
+                else
+                {
+                    _context.dbCategories.Add(new Category
+                    {
+                        Name = model.Name,
+                        ParentId = int.Parse(model.ParentId)
+                    });
+                }
                 _context.SaveChanges();
 
                 return RedirectToAction("Index", "Category");
