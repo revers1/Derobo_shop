@@ -2,7 +2,7 @@
 @using Microsoft.Owin.Security
 
 <h4 style="color:white">You can also authorize</h4>
-<hr />
+
 @{
     var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
     if (loginProviders.Count() == 0) {

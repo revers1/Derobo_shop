@@ -388,9 +388,13 @@ footer {
     margin-bottom: 5%;
 }
 
+.data-of-descr-product-price {
+    background-color: #CD5700;
+}
+
 .price-of-product-view {
     padding: 10px;
-    border: #5d16a2 1px solid;
+    border: #CD5700 1px solid;
 }
 
 .add-to-basket {
@@ -567,10 +571,9 @@ a {
     width: 100%;
     margin: auto;
     max-width: 525px;
-    min-height: 800px;
+    min-height: 650px;
     position: relative;
-    background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
-    box-shadow: 0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+    background-color: #660033;
 }
 
 .login-html {
@@ -617,7 +620,7 @@ a {
     .login-html .sign-in:checked + .tab,
     .login-html .sign-up:checked + .tab {
         color: #fff;
-        border-color: #1161ee;
+        border-color: #8b00ff;
     }
 
 .login-form {
@@ -726,3 +729,55 @@ a {
 .foot-lnk {
     text-align: center;
 }
+
+/*-------------(MY STYLES)-------------*/
+
+/*LOG IN*/
+
+.btn-login-log {
+    background-color: #8b00ff !important;
+    border: #8b00ff 1px solid !important;
+    color: white;
+}
+
+    .btn-login-log:hover {
+        background-color: #660066 !important;
+        border: 1px solid #660066 !important;
+        text-decoration: underline !important;
+    }
+
+.my-tab {
+    font-family: 'Century Gothic' !important;
+}
+
+.local-account {
+    color: white;
+    font-family: 'Century Gothic';
+}
+
+.my-label {
+    font-size: 14px;
+    font-family: 'Century Gothic';
+    font-weight: 500;
+    color: white !important;
+}
+
+.soc-log-forum {
+    margin-top:70%;
+    margin-left:10%;
+}
+
+.btn-default {
+    background-color: #8b00ff !important;
+    border: #8b00ff 1px solid !important;
+    color: white;
+    float: left;
+    margin-bottom: 4%;
+    margin-left: 4%;
+}
+    .btn-default:hover {
+        background-color: #660066 !important;
+        border: 1px solid #660066 !important;
+        text-decoration: underline !important;
+        color: white !important;
+    }

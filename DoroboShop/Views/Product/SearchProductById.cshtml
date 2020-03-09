@@ -9,7 +9,7 @@
         <ul style="list-style-type: none; margin-top: 2%;">
 
             <li style="float: left;">
-                <img src="@Model.Photo" class="image-of-product-view" />
+                <a href="@Model.Photo"><img src="@Model.Photo" class="image-of-product-view" /></a>
             </li>
 
             <li style="float: left;">
@@ -80,7 +80,7 @@
 
                                     <li class="nav-item-descr">
                                         <span class="description-of-product">
-                                            Comment:
+                                            Description:
                                             <span class="data-of-descr-product">
                                                 @Model.Description
                                             </span>
@@ -95,7 +95,7 @@
 
                         <li class="nav-item-descr">
                             <span class="description-of-product">
-                                <span class="data-of-descr-product price-of-product-view">
+                                <span class="data-of-descr-product price-of-product-view data-of-descr-product-price">
                                     @Model.Price $
                                 </span>
                             </span>

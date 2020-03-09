@@ -8,26 +8,26 @@
 
     <div class="row login-wrap" style="text-align:center !important">
         <div class="col-md-8 login-html">
-            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign in</label>
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab my-tab">Sign in</label>
        
                 <section id="loginForm">
                     @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                     {
                         @Html.AntiForgeryToken()
-                        <h4>Use a local account to log in.</h4>
+                        <h4 class="local-account">Use a local account to log in.</h4>
                         <hr />
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         <div class="group">
-                            <label for="pass" class="label">Email Address</label>
+                            <label for="pass" class="label my-label">Email Address</label>
                             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
                             @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">Password</label>
+                            <label for="pass" class="label my-label">Password</label>
                             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
                             @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
                         </div>
-                        <div class="group" style="color:white">
+                        <div class="group" style="color: white;">
                             <div class="col-md-offset-2 col-md-10">
                                 <div class="checkbox">
                                     @Html.CheckBoxFor(m => m.RememberMe)
@@ -37,7 +37,7 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
-                                <input type="submit" value="Log in" class="btn btn-info" />
+                                <input type="submit" value="Log in" class="btn btn-info btn-login-log" />
                             </div>
                         </div>
                         <p style="color:white">
@@ -50,7 +50,7 @@
           
             <hr />
             <br />
-            <div class="col-md-4" style="margin-top:70%; margin-left:10%;">
+            <div class="col-md-4 soc-log-forum">
                 <section id="socialLoginForm">
                     @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
                 </section>
