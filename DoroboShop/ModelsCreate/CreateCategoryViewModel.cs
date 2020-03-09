@@ -12,7 +12,7 @@ namespace DoroboShop.ModelsCreate
         [Required]
         public string Name { get; set; }
 
-        public int ParentId { get; set; }
+        public string ParentId { get; set; }
 
         public List<SelectListItem> Categories { get; set; }
 

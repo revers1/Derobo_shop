@@ -80,9 +80,8 @@ namespace DoroboShop.Controllers
             }
             selected.Add(new SelectListItem()
             {
-                Value = null,
-                Text = ""
-
+                Value = "Base",
+                Text = "Base category"
             });
             CreateCategoryViewModel cat = new CreateCategoryViewModel();
             cat.Categories = selected;
@@ -100,7 +99,7 @@ namespace DoroboShop.Controllers
                 _context.dbCategories.Add(new Category
                 {
                     Name = model.Name,
-                    ParentId = model.ParentId
+                    ParentId = int.Parse(model.ParentId)
                 });
                 _context.SaveChanges();
 
