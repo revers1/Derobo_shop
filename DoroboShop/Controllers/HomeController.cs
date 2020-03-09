@@ -16,10 +16,9 @@ namespace DoroboShop.Controllers
         }
 
 
-        public ActionResult Index()
+        public ActionResult Index(string txtProductName )
         {
             GroupViewModel model = new GroupViewModel();
-
             List<CategoryViewModelcs> listCategories = _context.dbCategories.Where(t => t.ParentId == null).Select(t => new CategoryViewModelcs
             {
                 Id = t.Id,
@@ -28,24 +27,50 @@ namespace DoroboShop.Controllers
             }).ToList();
 
             string linkString = Url.Content(Constants.ProductImagePath);
+            List<ProductViewModel> listProducts = new List<ProductViewModel>();
 
-            List<ProductViewModel> listProducts = _context.dbProduct.Select(t => new ProductViewModel
+            if (txtProductName == null)
             {
-                Id = t.Id,
-                ProductName = t.Name,
-                Photo = linkString + t.Photo,
-                Price = t.Price,
-                Size = t.Size,
-                Sale = t.Sale,
-                Quantity = t.Quantity,
-                Color = t.Color,
-                Brand = t.Brand,
-                Country = t.Country,
-                Season = t.Season,
-                Description = t.Description,
-                DataCreate = t.DataCreate,
-                CategoryId = t.CategoryId
-            }).ToList();
+                listProducts = _context.dbProduct.Select(t => new ProductViewModel
+                {
+                    Id = t.Id,
+                    ProductName = t.Name,
+                    Photo = linkString + t.Photo,
+                    Price = t.Price,
+                    Size = t.Size,
+                    Sale = t.Sale,
+                    Quantity = t.Quantity,
+                    Color = t.Color,
+                    Brand = t.Brand,
+                    Country = t.Country,
+                    Season = t.Season,
+                    Description = t.Description,
+                    DataCreate = t.DataCreate,
+                    CategoryId = t.CategoryId
+                }).ToList();
+            }
+            else
+            {
+
+                listProducts = _context.dbProduct.Where(t => t.Name.Contains(txtProductName)).Select(t => new ProductViewModel
+                {
+                    Id = t.Id,
+                    ProductName = t.Name,
+                    Photo = linkString + t.Photo,
+                    Price = t.Price,
+                    Size = t.Size,
+                    Sale = t.Sale,
+                    Quantity = t.Quantity,
+                    Color = t.Color,
+                    Brand = t.Brand,
+                    Country = t.Country,
+                    Season = t.Season,
+                    Description = t.Description,
+                    DataCreate = t.DataCreate,
+                    CategoryId = t.CategoryId
+                }).ToList();
+            }
+           
 
             model.Categories = listCategories;
             model.Products = listProducts;

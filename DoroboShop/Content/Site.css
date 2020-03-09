@@ -379,13 +379,32 @@ textarea {
 
 .price-of-product-view {
     padding: 10px;
+    border: #5d16a2 1px solid;
+}
+
+.add-to-basket {
+    margin-left: 5%;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.basket {
+    color: white !important;
+}
+
+.basket:hover {
+    color: white !important;
+}
+
+.button-basket {
+    color: white;
+    font-size: 18px;
+    font-family: "Century Gothic";
 }
 
 /*MEDIA*/
 
-
 /*FOOTER*/
-
 @media only screen and (max-width: 798px) {
     .span-copyright {
         visibility: hidden;
@@ -481,16 +500,10 @@ textarea {
     }
 }
 
+/*LOGIN && REGISTER WINDOWS*/
 
-
-
-
-
-
-
-/*Login/Register menu*/
 *, :after, :before {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 .clearfix:after, .clearfix:before {
