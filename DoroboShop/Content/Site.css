@@ -1,7 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: black !important;
+    background-color: #191919 !important;
 }
 
 ::selection {
@@ -117,14 +117,14 @@ textarea {
     background-color: #8b00ff;
 }
 
-.menu-of-categories-link:hover {
-    color: #8b00ff;
-    background-color: white;
-    border-radius: 5px;
-    font-weight: 500;
-}
+    .menu-of-categories-link:hover {
+        color: #8b00ff;
+        background-color: white;
+        border-radius: 5px;
+        font-weight: 500;
+    }
 
-/*PRODUCT BLOCK*/
+/*BLOCK*/
 
 .block-product {
     float: left;
@@ -155,7 +155,7 @@ textarea {
 
 .price-of-product {
     margin-top: 3%;
-    background-color: #FFA000;
+    background-color: #CD5700;
     color: white;
     padding: 10px;
     font-family: "Century Gothic";
@@ -166,6 +166,11 @@ textarea {
 }
 
 /*FOOTER*/
+
+footer {
+    background-color: #191919 !important;
+    padding-top: 1%;
+}
 
 .footer-menues {
     list-style: none;
@@ -383,18 +388,33 @@ textarea {
 }
 
 .add-to-basket {
+    float: right;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 3%;
+}
+
+.add-too-basket {
     margin-left: 5%;
     padding: 8px;
     border-radius: 5px;
+    background-color: #660066;
+    border: #660066 1px solid;
 }
+
+    .add-too-basket:hover {
+        background-color: #660033;
+        border: #660033 1px solid;
+        text-decoration: underline;
+    }
 
 .basket {
     color: white !important;
 }
 
-.basket:hover {
-    color: white !important;
-}
+    .basket:hover {
+        color: white !important;
+    }
 
 .button-basket {
     color: white;
@@ -402,9 +422,24 @@ textarea {
     font-family: "Century Gothic";
 }
 
-/*MEDIA*/
+.riabii {
+    background-color: #660066;
+    border: #660066 1px solid;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 10px;
+}
+
+    .riabii:hover {
+        background-color: #660033;
+        border: #660033 1px solid;
+        text-decoration: underline;
+    }
+
+/*--------------MEDIA--------------*/
 
 /*FOOTER*/
+
 @media only screen and (max-width: 798px) {
     .span-copyright {
         visibility: hidden;
