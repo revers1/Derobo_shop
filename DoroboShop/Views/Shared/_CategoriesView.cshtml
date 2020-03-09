@@ -5,7 +5,7 @@
         <li class="menu-of-categories-item">
             @foreach (var category in Model)
             {
-                <a href="@Url.Action("GetProductsByCategory","CategoryController",new { id = category.Id})" class="menu-of-categories-link">@category.Name</a>
+                <a href="@Url.Action("GetProductsByCategory", "Category",new { id = category.Id})" class="menu-of-categories-link">@category.Name</a>
             }
         </li>
     </ul>

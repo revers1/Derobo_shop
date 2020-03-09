@@ -32,22 +32,20 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer class="bottom-block">
-            <ul class="footer-menues">
-                <li class="footer-social-network"><span class="footer-brand-name">Derobo <span class="footer-brand-name-clothes">Clothes</span></span></li>
-                <li class="footer-social-network"><a href="https://www.instagram.com/instagram/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
-                <li class="footer-social-network"><a href="https://github.com/revers1/Derobo_shop"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a></li>
-                <li class="footer-social-network"><a href="https://www.facebook.com/facebook"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>
-            </ul>
+    </div>
+    <footer class="bottom-block" style="margin-top: 1%;">
+        <ul class="footer-menues">
+            <li class="footer-social-network"><a href="@Url.Action("Index", "Home")" class="home-page-link"><span class="footer-brand-name">Derobo <span class="footer-brand-name-clothes">Clothes</span></span></a></li>
+            <li class="footer-social-network"><a href="https://www.instagram.com/instagram/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+            <li class="footer-social-network"><a href="https://github.com/revers1/Derobo_shop"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a></li>
+            <li class="footer-social-network"><a href="https://www.facebook.com/facebook"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a></li>
+        </ul>
         <div style="text-align: center;">
             <span class="span-copyright">
                 &copy; Derobo Clothes, @DateTime.Now.Year, Clothing store №1 in the Mars.
             </span>
         </div>
-        </footer>
-    </div>
-
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

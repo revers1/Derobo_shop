@@ -18,7 +18,7 @@ namespace DoroboShop.Controllers
             _context = new ApplicationDbContext();
         }
 
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             List<FilterValueViewModel> Filters = _context.dbFilterValue.Select(e => new FilterValueViewModel
@@ -29,6 +29,8 @@ namespace DoroboShop.Controllers
 
             return View(Filters);
         }
+
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public ActionResult Create()
         {
@@ -68,6 +70,7 @@ namespace DoroboShop.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(FilterValueViewModel model)
         {
 
@@ -98,7 +101,8 @@ namespace DoroboShop.Controllers
             else { return View(model); }
 
         }
-        
+
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id)
         {
 

@@ -19,28 +19,32 @@ namespace DoroboShop.Controllers
             _context = new ApplicationDbContext();
         }
 
-      
-
         public ActionResult GetProductsByCategory(int id)
         {
 
-            //string image;
-            //    //= Server.MapPath(Constants.ProductImagePath) +
-            //    //filename;
-
-            List<ProductViewModel> list = _context.dbProduct.Where(t => t.CategoryId == id).Select(t => new ProductViewModel
+            var Products = _context.dbProduct.Where(t=>t.CategoryId == id).ToList();
+            
+           List<ProductViewModel> list = new List<ProductViewModel>();
+            foreach (var item in Products)
             {
-                Brand = t.Brand,
-                CategoryId = t.CategoryId,
-                ProductName = t.Name,
-                Price = t.Price,
-                Photo = t.Photo,              
-                Id = t.Id
-            }).ToList();
+                var filename = Url.Content(Constants.ProductImagePath) + item.Photo;
+                filename.Replace(@"\\", @"\");
+                list.Add(new ProductViewModel
+                { 
+                    Brand = item.Brand,
+                    CategoryId = item.CategoryId,
+                    ProductName = item.Name,
+                    Price = item.Price,
+                    Photo = filename,
+                    Id = item.Id
+                });
+            }
 
             return View(list);
         }
 
+
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id)
         {
 
@@ -52,6 +56,8 @@ namespace DoroboShop.Controllers
             return RedirectToAction("Index", "Category");
 
         }
+
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             List<CategoryViewModelcs> Categories = _context.dbCategories.Select(e => new CategoryViewModelcs
@@ -65,6 +71,7 @@ namespace DoroboShop.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             List<Category> list = _context.dbCategories.ToList();
@@ -91,6 +98,7 @@ namespace DoroboShop.Controllers
 
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(CreateCategoryViewModel model)
         {
 
