@@ -345,9 +345,9 @@ footer {
     border: 3px solid #191919;
 }
 
-.image-of-product-view:hover {
-    border: 3px solid #8b00ff;
-}
+    .image-of-product-view:hover {
+        border: 3px solid #8b00ff;
+    }
 
 .nav-item-descr {
     margin-top: 9%;
@@ -738,6 +738,8 @@ a {
     background-color: #8b00ff !important;
     border: #8b00ff 1px solid !important;
     color: white;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
     .btn-login-log:hover {
@@ -760,11 +762,13 @@ a {
     font-family: 'Century Gothic';
     font-weight: 500;
     color: white !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .soc-log-forum {
-    margin-top:70%;
-    margin-left:10%;
+    margin-top: 70%;
+    margin-left: 10%;
 }
 
 .btn-default {
@@ -773,11 +777,90 @@ a {
     color: white;
     float: left;
     margin-bottom: 4%;
-    margin-left: 4%;
+    margin-left: 8%;
+    margin-right: auto !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    border-radius: 25px;
 }
+
     .btn-default:hover {
         background-color: #660066 !important;
         border: 1px solid #660066 !important;
         text-decoration: underline !important;
         color: white !important;
     }
+
+.label-login {
+    padding: 5px;
+}
+
+#my-input {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    color: white;
+    border-radius: 20px;
+    background-color: #434870 !important;
+    border: #434870 1px solid;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.checkbox {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.remember-me-label {
+    font-family: 'Century Gothic' !important;
+    padding-left: 5px !important;
+}
+
+.remember-me {
+    height: 14px;
+    width: 14px;
+    background-color: #434870;
+}
+
+.p-acc {
+    font-family: 'Century Gothic';
+    padding-top: 10px;
+    color: white;
+}
+
+.social-log-list {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.can-authorize {
+    font-family: 'Century Gothic';
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+
+.input-register {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.group-register {
+    padding: 0px!important ;
+}
+
+.btn-sign-in {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 70px !important;
+    padding-right: 70px !important;
+    border-radius: 25px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.dont-have-an-acc:hover {
+    color: white !important;
+}
